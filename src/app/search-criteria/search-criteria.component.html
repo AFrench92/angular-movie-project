@@ -1,0 +1,9 @@
+<form #genreForm="ngForm" (ngSubmit)="getGenreId(genreForm)">
+  <label for="genre">Choose a genre:</label>
+  <select id="genre" name="genre" ngModel>
+    <option *ngFor="let genre of genreData?.genres" value="{{ genre.id }}">
+      {{ genre.name }}
+    </option>
+  </select>
+  <input type="submit" />
+</form>

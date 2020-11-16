@@ -1,0 +1,5 @@
+<app-search-criteria (submitEvent)="getMovies($event)"></app-search-criteria>
+<app-movie
+  *ngFor="let movie of movieData?.results"
+  [movieRef]="movie"
+></app-movie>
