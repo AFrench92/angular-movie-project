@@ -8,7 +8,7 @@ import { MovieService } from '../movie.service';
   styleUrls: ['./search-criteria.component.css'],
 })
 export class SearchCriteriaComponent implements OnInit {
-  @Output() submitEvent = new EventEmitter<string>();
+  @Output() submitEvent = new EventEmitter<NgForm>();
   genreData: any;
 
   constructor(private movieService: MovieService) {}
@@ -20,7 +20,9 @@ export class SearchCriteriaComponent implements OnInit {
     });
   }
 
-  getGenreId = (form: NgForm): void => {
-    this.submitEvent.emit(form.value.genre);
+  getSearchTerms = (form: NgForm): void => {
+    this.submitEvent.emit(form);
   };
+
+
 }
