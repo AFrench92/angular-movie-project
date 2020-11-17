@@ -1,0 +1,29 @@
+.container {
+  background-color: black;
+  border: chartreuse 1px solid;
+  margin: 5px;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  width: 200px;
+}
+
+.faves-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1030ad;
+  border: #ffe20a solid 1px;
+  margin: 10px;
+}
+
+.faves-link {
+  color: #ffe20a;
+  padding: 40px 15px;
+}

@@ -1,0 +1,14 @@
+<div class="popup" (click)="closeDetails()">
+  <img class="tv" src="assets/tvbackclean.jpg" alt="" />
+  <div class="detail-container">
+    <p class="title-font">{{ movieRef.title }}</p>
+    <img
+      class="backdrop"
+      src="https://image.tmdb.org/t/p/w300/{{ movieRef.backdrop_path }}"
+      alt=""
+    />
+    <div class="details-box">
+      <p class="details-font">{{ movieRef.overview }}</p>
+    </div>
+  </div>
+</div>

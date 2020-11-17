@@ -1,0 +1,56 @@
+.popup {
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+.tv {
+  position: fixed;
+  width: 1100px;
+  z-index: 3;
+}
+
+.detail-container {
+  position: relative;
+  top: -277px;
+  right: 277px;
+  z-index: 4;
+  width: 200px;
+  height: 200px;
+}
+
+.backdrop {
+  width: 744px;
+}
+
+.details {
+  height: 100%;
+  width: 100%;
+  background-color: black;
+}
+
+.details-box {
+  box-sizing: border-box;
+  overflow: auto;
+  width: 741px;
+  height: 71px;
+  padding: 3px;
+}
+.title-font {
+  background-color: black;
+  color: chartreuse;
+  width: 744px;
+  font-size: 32px;
+  /* height: 73px; */
+}
+
+.details-font {
+  color: chartreuse;
+  background-color: black;
+}

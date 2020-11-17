@@ -9,6 +9,7 @@ import { Favorite } from '../interfaces/favorite';
 export class FavoritesComponent implements OnInit {
   @Input() favoriteRef: Favorite;
   @Output() favoriteEvent = new EventEmitter<Favorite>();
+  displayDetails: boolean = false;
 
   constructor() {}
 
@@ -16,5 +17,9 @@ export class FavoritesComponent implements OnInit {
 
   toggleFavorite = (favorite: Favorite) => {
     this.favoriteEvent.emit(favorite);
+  };
+
+  toggleDisplayDetails = () => {
+    this.displayDetails = !this.displayDetails;
   };
 }

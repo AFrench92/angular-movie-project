@@ -10,6 +10,8 @@ import { Favorite } from '../interfaces/favorite';
 export class MovieComponent implements OnInit {
   @Input() movieRef: any;
   @Output() favoriteEvent = new EventEmitter<Favorite>();
+  @Output() detailEvent = new EventEmitter<void>();
+  displayDetails: boolean = false;
   constructor() {}
 
   ngOnInit(): void {}
@@ -19,7 +21,14 @@ export class MovieComponent implements OnInit {
       title: movie.title,
       imgUrl: movie.poster_path,
       id: movie.id,
+      backdrop_path: movie.backdrop_path,
+      overview: movie.overview,
     };
     this.favoriteEvent.emit(newFavorite);
+  };
+
+  toggleDisplayDetails = () => {
+    // this.displayDetails = !this.displayDetails;
+    this.detailEvent.emit();
   };
 }
