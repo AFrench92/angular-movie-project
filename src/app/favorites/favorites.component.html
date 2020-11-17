@@ -1,5 +1,12 @@
 <div>
-    <p>{{ favoriteRef.title }}</p>
-    <img src="https://image.tmdb.org/t/p/w300/{{ favoriteRef.imgUrl }}" alt="" />
-    <button (click)="toggleFavorite(favoriteRef)">X</button>
+  <p>{{ favoriteRef.title }}</p>
+  <img src="https://image.tmdb.org/t/p/w300/{{ favoriteRef.imgUrl }}" alt="" />
+  <button (click)="toggleFavorite(favoriteRef)">Remove from Watch List</button>
 </div>
+<button *ngIf="!displayDetails" (click)="toggleDisplayDetails()">
+  See Details
+</button>
+<app-details [movieRef]="favoriteRef" *ngIf="displayDetails"></app-details>
+<button *ngIf="displayDetails" (click)="toggleDisplayDetails()">
+  Hide Details
+</button>
