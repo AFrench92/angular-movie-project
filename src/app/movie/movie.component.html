@@ -4,11 +4,13 @@
     src="https://image.tmdb.org/t/p/w300/{{ movieRef.poster_path }}"
     alt=""
   />
-  <button (click)="toggleFavorite(movieRef)">Add to Watch List</button>
+  <button class="like-button" (click)="toggleFavorite(movieRef)">
+    <img class="like" src="assets/like.jpg" alt="" />
+  </button>
   <button *ngIf="!displayDetails" (click)="toggleDisplayDetails()">
     See Details
   </button>
-  <app-details [movieRef]="movieRef" *ngIf="displayDetails"></app-details>
+  <!-- <app-details [movieRef]="movieRef" *ngIf="displayDetails"></app-details> -->
   <button *ngIf="displayDetails" (click)="toggleDisplayDetails()">
     Hide Details
   </button>

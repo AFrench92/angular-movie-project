@@ -10,6 +10,7 @@ import { Favorite } from '../interfaces/favorite';
 export class MovieComponent implements OnInit {
   @Input() movieRef: any;
   @Output() favoriteEvent = new EventEmitter<Favorite>();
+  @Output() detailEvent = new EventEmitter<void>();
   displayDetails: boolean = false;
   constructor() {}
 
@@ -27,6 +28,7 @@ export class MovieComponent implements OnInit {
   };
 
   toggleDisplayDetails = () => {
-    this.displayDetails = !this.displayDetails;
+    // this.displayDetails = !this.displayDetails;
+    this.detailEvent.emit();
   };
 }

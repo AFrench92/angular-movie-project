@@ -11,6 +11,7 @@ import { MovieService } from '../movie.service';
 export class MovieListComponent implements OnInit {
   movieData: any;
   genreId: string = '';
+  showIndex: number = null;
   constructor(
     private movieService: MovieService,
     private route: ActivatedRoute
@@ -38,5 +39,8 @@ export class MovieListComponent implements OnInit {
   }
   callEditFunction = (favorite: Favorite) => {
     this.movieService.editFavorites(favorite);
+  };
+  setShowIndex = (index: number) => {
+    this.showIndex = index;
   };
 }
