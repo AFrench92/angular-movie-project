@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import { MovieService } from '../movie.service';
 
 @Component({
@@ -11,7 +12,7 @@ export class SearchCriteriaComponent implements OnInit {
   @Output() submitEvent = new EventEmitter<NgForm>();
   genreData: any;
 
-  constructor(private movieService: MovieService) {}
+  constructor(private movieService: MovieService, private router: Router) {}
 
   ngOnInit(): void {
     this.movieService.getGenres().subscribe((response) => {
@@ -21,8 +22,12 @@ export class SearchCriteriaComponent implements OnInit {
   }
 
   getSearchTerms = (form: NgForm): void => {
-    this.submitEvent.emit(form);
+    // this.submitEvent.emit(form);
+    this.router.navigate(['/home'], {
+      queryParams: {
+        genreId: form.value.genre,
+        rating: form.value.rating,
+      },
+    });
   };
-
-
 }
