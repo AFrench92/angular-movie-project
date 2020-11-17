@@ -1,1 +1,3 @@
-<p>watch-list works!</p>
+<app-header></app-header>
+<app-favorites *ngFor="let favorite of favorites " [favoriteRef]="favorite" (favoriteEvent)="callEditFunction($event)">
+</app-favorites>

@@ -1,7 +1,5 @@
 <div>
   <p>{{ movieRef.title }}</p>
-  <img
-    src="https://image.tmdb.org/t/p/w300/{{ movieRef.poster_path }}"
-    alt=""
-  />
+  <img src="https://image.tmdb.org/t/p/w300/{{ movieRef.poster_path }}" alt="" />
+  <button (click)="toggleFavorite(movieRef)">X</button>
 </div>

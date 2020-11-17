@@ -1,2 +1,5 @@
-<app-header></app-header>
-<app-watch-list></app-watch-list>
+<div>
+    <p>{{ favoriteRef.title }}</p>
+    <img src="https://image.tmdb.org/t/p/w300/{{ favoriteRef.imgUrl }}" alt="" />
+    <button (click)="toggleFavorite(favoriteRef)">X</button>
+</div>
