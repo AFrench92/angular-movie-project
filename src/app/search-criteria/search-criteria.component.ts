@@ -22,11 +22,11 @@ export class SearchCriteriaComponent implements OnInit {
   }
 
   getSearchTerms = (form: NgForm): void => {
-    // this.submitEvent.emit(form);
     this.router.navigate(['/home'], {
       queryParams: {
         genreId: form.value.genre,
         rating: form.value.rating,
+        runTime: form.value.runTime,
       },
     });
   };

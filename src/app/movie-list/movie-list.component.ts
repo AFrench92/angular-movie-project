@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Favorite } from '../interfaces/favorite';
 import { MovieService } from '../movie.service';
 
 @Component({
@@ -24,20 +25,18 @@ export class MovieListComponent implements OnInit {
         });
       } else {
         this.movieService
-          .getMovies(urlText.get('genreId'), Number(urlText.get('rating')))
+          .getMovies(
+            urlText.get('genreId'),
+            Number(urlText.get('rating')),
+            Number(urlText.get('runTime'))
+          )
           .subscribe((response) => {
             this.movieData = response;
           });
       }
     });
   }
-
-  // search = (form) => {
-  // this.router.navigate(["/home"], {
-  //   queryParams: {
-  //     genreId: form.value.genre,
-  //     rating: form.value.rating,
-  //   }
-  // })
-  // };
+  callEditFunction = (favorite: Favorite) => {
+    this.movieService.editFavorites(favorite);
+  };
 }
