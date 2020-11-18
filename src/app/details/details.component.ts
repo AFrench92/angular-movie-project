@@ -12,7 +12,7 @@ export class DetailsComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-    console.log(this.movieRef);
+    // console.log(this.movieRef);
   }
 
   closeDetails = () => {

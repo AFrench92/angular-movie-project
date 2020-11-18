@@ -10,6 +10,7 @@ import { MovieService } from '../movie.service';
 })
 export class MovieComponent implements OnInit {
   @Input() movieRef: any;
+  @Input() indexRef: number;
   @Output() favoriteEvent = new EventEmitter<Favorite>();
   @Output() detailEvent = new EventEmitter<void>();
   // displayDetails: boolean = false;
@@ -27,7 +28,13 @@ export class MovieComponent implements OnInit {
   // }
   constructor(private movieService: MovieService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    // console.log(this.movieService.favorites);
+    // console.log(this.movieRef.id);
+    this.isFav = this.movieService.favorites.some((movie) => {
+      return movie.id === this.movieRef.id;
+    });
+  }
 
   toggleFavorite = (movie: any) => {
     let newFavorite: Favorite = {

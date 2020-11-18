@@ -33,6 +33,7 @@ export class MovieListComponent implements OnInit {
           )
           .subscribe((response) => {
             this.movieData = response;
+            // console.log(this.movieData[0]);
           });
       }
     });
