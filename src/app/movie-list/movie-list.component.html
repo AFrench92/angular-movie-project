@@ -1,6 +1,7 @@
 <app-search-criteria></app-search-criteria>
 <div class="movie-grid">
   <app-movie
+    class="movie"
     *ngFor="let movie of movieData?.results; index as i"
     [movieRef]="movie"
     (favoriteEvent)="callEditFunction($event)"

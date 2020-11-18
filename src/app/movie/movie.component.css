@@ -1,6 +1,11 @@
 .main-container {
   display: flex;
   flex-direction: column;
+  width: 320px;
+}
+
+.poster-container {
+  width: 300px;
 }
 
 .buttons-container {

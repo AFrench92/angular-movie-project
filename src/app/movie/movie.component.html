@@ -1,16 +1,19 @@
 <main class="main-container">
-  <div>
-  <p class="titles">{{ movieRef.title }}</p>
-  <img class="movie-poster"
-    src="https://image.tmdb.org/t/p/w300/{{ movieRef.poster_path }}"
-    alt=""
-  />
-</div>
-<div class="buttons-container">
-  <button class="like-button" (click)="toggleFavorite(movieRef)">
-    <img class="like" src="assets/thumbsup.png" alt="" />
-  </button>
-  <button class="see-details" (click)="toggleDisplayDetails()">See Details</button>
-  <!-- <app-details [movieRef]="movieRef" *ngIf="displayDetails"></app-details> -->
-</div>
+  <div class="poster-container">
+    <p class="titles">{{ movieRef.title }}</p>
+    <img
+      class="movie-poster"
+      src="https://image.tmdb.org/t/p/w300/{{ movieRef.poster_path }}"
+      alt=""
+    />
+  </div>
+  <div class="buttons-container">
+    <button class="like-button" (click)="toggleFavorite(movieRef)">
+      <img class="like" src="assets/thumbsup.png" alt="" />
+    </button>
+    <button class="see-details" (click)="toggleDisplayDetails()">
+      See Details
+    </button>
+    <!-- <app-details [movieRef]="movieRef" *ngIf="displayDetails"></app-details> -->
+  </div>
 </main>
