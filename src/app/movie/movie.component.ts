@@ -29,8 +29,6 @@ export class MovieComponent implements OnInit {
   constructor(private movieService: MovieService) {}
 
   ngOnInit(): void {
-    // console.log(this.movieService.favorites);
-    // console.log(this.movieRef.id);
     this.isFav = this.movieService.favorites.some((movie) => {
       return movie.id === this.movieRef.id;
     });
