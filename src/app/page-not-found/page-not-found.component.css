@@ -1,5 +1,36 @@
-.container {
-  height: 100%;
+.img {
+  position: fixed;
+  height: 100vh;
   width: 100%;
-  background-image: url(https://files.slack.com/files-pri/T04UPFZ31-F01EYHL00RY/vhs_bar.jpg);
+  z-index: 0;
+  /* background-image: url(../../assets/404.jpg); */
+}
+
+.return {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: black;
+  z-index: 1;
+  height: 300px;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.text {
+  color: white;
+  font-size: 45px;
+}
+
+.button {
+  color: #ffe20a;
+  background-color: #1030ad;
+  border: #ffe20a solid 1px;
+  height: 50px;
+  width: 100px;
 }
