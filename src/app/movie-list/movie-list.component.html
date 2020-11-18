@@ -1,14 +1,9 @@
 <app-search-criteria></app-search-criteria>
-<app-movie
-  *ngFor="let movie of movieData?.results; index as i"
-  [movieRef]="movie"
-  (favoriteEvent)="callEditFunction($event)"
-  (detailEvent)="setShowIndex(i)"
->
-</app-movie>
-<app-details
-  *ngFor="let movie of movieData?.results; index as i"
-  [movieRef]="movie"
-  [ngClass]="{ none: showIndex !== i }"
-  (closeEvent)="setShowIndex(null)"
-></app-details>
+<div class="movie-grid">
+  <app-movie *ngFor="let movie of movieData?.results; index as i" [movieRef]="movie"
+    (favoriteEvent)="callEditFunction($event)" (detailEvent)="setShowIndex(i)">
+
+  </app-movie>
+</div>
+<app-details *ngFor="let movie of movieData?.results; index as i" [movieRef]="movie"
+  [ngClass]="{ none: showIndex !== i }" (closeEvent)="setShowIndex(null)"></app-details>

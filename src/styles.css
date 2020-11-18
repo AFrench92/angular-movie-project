@@ -9,6 +9,7 @@ p {
 }
 
 body {
-  /* background-color: black; */
+  background-color: black;
   font-family: "Anton", sans-serif;
+  cursor: url("assets/pointer2.png"), auto;
 }
