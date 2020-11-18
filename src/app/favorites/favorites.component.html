@@ -1,7 +1,10 @@
+<main class="main-container">
 <div>
-  <p>{{ favoriteRef.title }}</p>
-  <img src="https://image.tmdb.org/t/p/w300/{{ favoriteRef.imgUrl }}" alt="" />
-  <button (click)="toggleFavorite(favoriteRef)">Remove from Watch List</button>
+  <p class="titles">{{ favoriteRef.title }}</p>
+  <img class="movie-poster" src="https://image.tmdb.org/t/p/w300/{{ favoriteRef.imgUrl }}" alt="" />
 </div>
-<button (click)="toggleDisplayDetails()">See Details</button>
-<!-- <app-details [movieRef]="favoriteRef" *ngIf="displayDetails"></app-details> -->
+<div class="buttons-container">
+    <button class="remove-favorite" (click)="toggleFavorite(favoriteRef)">Remove from Watch List</button>
+  <button class="see-details" (click)="toggleDisplayDetails()">See Details</button>
+</div>
+</main>
