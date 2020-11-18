@@ -11,7 +11,7 @@ export class MovieComponent implements OnInit {
   @Input() movieRef: any;
   @Output() favoriteEvent = new EventEmitter<Favorite>();
   @Output() detailEvent = new EventEmitter<void>();
-  displayDetails: boolean = false;
+  // displayDetails: boolean = false;
   constructor() {}
 
   ngOnInit(): void {}

@@ -1,3 +1,14 @@
 <app-header></app-header>
-<app-favorites *ngFor="let favorite of favorites " [favoriteRef]="favorite" (favoriteEvent)="callEditFunction($event)">
+<app-favorites
+  *ngFor="let favorite of favorites; index as i"
+  [favoriteRef]="favorite"
+  (favoriteEvent)="callEditFunction($event)"
+  (detailEvent)="setShowIndex(i)"
+>
 </app-favorites>
+<app-details
+  *ngFor="let favorite of favorites; index as i"
+  [movieRef]="favorite"
+  [ngClass]="{ none: showIndex !== i }"
+  (closeEvent)="setShowIndex(null)"
+></app-details>

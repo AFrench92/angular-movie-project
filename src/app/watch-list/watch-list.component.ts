@@ -9,7 +9,7 @@ import { MovieService } from '../movie.service';
 })
 export class WatchListComponent implements OnInit {
   favorites: Favorite[] = [];
-
+  showIndex: number = null;
   constructor(private movieService: MovieService) {}
 
   ngOnInit(): void {
@@ -17,5 +17,9 @@ export class WatchListComponent implements OnInit {
   }
   callEditFunction = (favorite: Favorite) => {
     this.movieService.editFavorites(favorite);
+  };
+
+  setShowIndex = (index: number) => {
+    this.showIndex = index;
   };
 }

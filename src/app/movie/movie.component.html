@@ -1,14 +1,12 @@
 <main class="main-container">
   <p>{{ movieRef.title }}</p>
-  <img src="https://image.tmdb.org/t/p/w300/{{ movieRef.poster_path }}" alt="" />
+  <img
+    src="https://image.tmdb.org/t/p/w300/{{ movieRef.poster_path }}"
+    alt=""
+  />
   <button class="like-button" (click)="toggleFavorite(movieRef)">
     <img class="like" src="assets/thumbsup.png" alt="" />
   </button>
-  <button *ngIf="!displayDetails" (click)="toggleDisplayDetails()">
-    See Details
-  </button>
+  <button (click)="toggleDisplayDetails()">See Details</button>
   <!-- <app-details [movieRef]="movieRef" *ngIf="displayDetails"></app-details> -->
-  <button *ngIf="displayDetails" (click)="toggleDisplayDetails()">
-    Hide Details
-  </button>
 </main>
