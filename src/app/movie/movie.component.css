@@ -1,7 +1,41 @@
 .main-container {
   display: flex;
+  flex-direction: column;
+}
+
+.buttons-container {
+  display: flex;
+}
+
+.titles {
+  color: chartreuse;
+  font-family: "Anton", sans-serif;
+}
+
+.movie-poster {
+  margin: 5px;
 }
 
 .like {
   width: 50px;
+}
+
+.like-button {
+  font-family: "Anton", sans-serif;
+  background-color: #1030ad;
+  border: #ffe20a solid 1px;
+  margin: 5px;
+  color: hsl(53, 100%, 52%);
+  width: 150px;
+  height: 50px;
+}
+
+.see-details {
+  font-family: "Anton", sans-serif;
+  background-color: #1030ad;
+  border: #ffe20a solid 1px;
+  margin: 5px;
+  color: #ffe20a;
+  width: 150px;
+  height: 50px;
 }
