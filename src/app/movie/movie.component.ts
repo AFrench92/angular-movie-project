@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { emit } from 'process';
 import { Favorite } from '../interfaces/favorite';
+import { MovieService } from '../movie.service';
 
 @Component({
   selector: 'app-movie',
@@ -12,7 +13,19 @@ export class MovieComponent implements OnInit {
   @Output() favoriteEvent = new EventEmitter<Favorite>();
   @Output() detailEvent = new EventEmitter<void>();
   // displayDetails: boolean = false;
-  constructor() {}
+  isFav = false;
+
+  // isFavorite(): boolean {
+  //   console.log('b', this.movieRef);
+  //   return this.movieService.favorites.some((movie) => {
+  //     console.log('c', movie);
+  //     if (movie === this.movieRef) {
+  //       console.log('a', movie);
+  //       return true;
+  //     }
+  //   });
+  // }
+  constructor(private movieService: MovieService) {}
 
   ngOnInit(): void {}
 
@@ -25,6 +38,7 @@ export class MovieComponent implements OnInit {
       overview: movie.overview,
     };
     this.favoriteEvent.emit(newFavorite);
+    this.isFav = !this.isFav;
   };
 
   toggleDisplayDetails = () => {
